@@ -1,0 +1,9 @@
+requests==2.31.0
+psycopg2==2.9.9
+flask==3.0.2
+Werkzeug==3.0.1
+neo4j==5.19.0
+Flask-Cors==4.0.0
+protobuf==5.26.1
+grpcio==1.63.0
+grpcio-tools==1.63.0

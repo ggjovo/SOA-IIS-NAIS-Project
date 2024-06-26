@@ -1,0 +1,38 @@
+/* TourForm.module.css */
+
+.container {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .formControl {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .label {
+    font-size: 1rem;
+  }
+  
+  .input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+  
+  .select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+  
+  .radioGroup {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .button {
+    margin-top: 20px;
+  }
+  

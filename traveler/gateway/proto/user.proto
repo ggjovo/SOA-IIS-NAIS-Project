@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+package user;
+
+import "google/api/annotations.proto";
+
+option go_package = "user_microservice/invoicer";
+
+import "google/protobuf/empty.proto";
+
+message UserInfo {
+  string username = 1;
+  string role = 2;
+}
+
+message UserRegister {
+  string username = 1;
+  string password = 2;
+  string role = 3;
+  string email = 4;
+}
+
+service UserService {
+  rpc RegisterUser (UserRegister) returns (UserInfo) {
+    option (google.api.http) = {
+      post: "/v1/user/register"
+      body: "*"
+    };
+  }
+  rpc BlockUser (BlockUserRequest) returns (BlockMessage) {
+    option (google.api.http) = {
+      post: "/v1/user/block"
+      body: "*"
+    };
+  }
+  rpc GetAllUsers (google.protobuf.Empty) returns (GetAllUsersResponse) {
+    option (google.api.http) = {
+      get: "/v1/user/all"
+    };
+  }
+}
+
+message BlockUserRequest {
+  string username = 1;
+}
+
+message BlockMessage {
+  string message = 1;
+}
+
+message GetAllUsersResponse {
+  repeated UserInfo users = 1;
+}

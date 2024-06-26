@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+package proto;
+
+option go_package = "auth_microservice/invoicer";
+
+import "google/protobuf/empty.proto";
+import "google/api/annotations.proto";
+
+message User {
+  string username = 1;
+  string password = 2;
+}
+
+message UserInfo {
+  string id = 1;
+  string username = 2;
+  string role = 3;
+}
+
+service AuthenticationService {
+  rpc Login (User) returns (LoginResponse) {
+    option (google.api.http) = {
+      post: "/auth_login"
+      body: "*"
+    };
+  }
+  rpc LogoutUser (google.protobuf.Empty) returns (LogoutResponse) {
+    option (google.api.http) = {
+      get: "/v1/user/logout"
+    };
+  }
+  rpc CheckToken (google.protobuf.Empty) returns (CheckTokenResponse) {
+    option (google.api.http) = {
+      get: "/auth_checktoken"
+    };
+  }
+  rpc GetUserInfo (google.protobuf.Empty) returns (UserInfo) {
+    option (google.api.http) = {
+      get: "/auth_getuserinfo"
+    };
+  }
+}
+
+message LoginResponse {
+  string token = 1;
+}
+
+message LogoutResponse {
+  string message = 1;
+}
+
+message CheckTokenResponse {
+  bool valid = 1;
+}

@@ -1,0 +1,245 @@
+{
+	"info": {
+		"_postman_id": "dca1e583-8901-4790-9295-8caf26ad8af1",
+		"name": "NAIS Queries",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33726632"
+	},
+	"item": [
+		{
+			"name": "Cold-start Query for Posts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/get_most_popular_posts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"get_most_popular_posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cold-start Query for Blogs ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/get_most_popular_blogs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"get_most_popular_blogs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Has Only Interactions with Blogs/Posts ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/get_most_liked_blog_from_user/59",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"get_most_liked_blog_from_user",
+						"59"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Has Only Interactions with Other Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/get_most_liked_blog_from_user_follows/40",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"get_most_liked_blog_from_user_follows",
+						"40"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Content-Based Recommendation for Blogs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/get_simular_blogs_from_user_likes/41",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"get_simular_blogs_from_user_likes",
+						"41"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Content-Based Recommendation for Posts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/get_simular_post_from_user_likes/41",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"get_simular_post_from_user_likes",
+						"41"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Collaborative Filtering Recommendation of Blogs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/get_simular_blog_from_user_follows/41",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"get_simular_blog_from_user_follows",
+						"41"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Collaborative Filtering Recommendation for Posts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/get_simular_posts_from_user_follows/41",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"get_simular_posts_from_user_follows",
+						"41"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Recommendation for Users to Follow",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/get_simular_users_from_user_follows/41",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"get_simular_users_from_user_follows",
+						"41"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Most active user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/get_most_active_user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"get_most_active_user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Best rated blogs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/get_best_rated_blogs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"get_best_rated_blogs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Most popular tags",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/get_most_popular_tags",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"get_most_popular_tags"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

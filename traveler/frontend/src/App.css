@@ -1,0 +1,28 @@
+/* Nav */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: #fff;
+}
+
+.navbar-brand a,
+.navbar-nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+}
+
+.nav-items {
+  list-style: none;
+  display: flex;
+}
+
+.nav-items a {
+  transition: color 0.3s ease;
+}
+
+.nav-items a:hover {
+  color: #ccc;
+}

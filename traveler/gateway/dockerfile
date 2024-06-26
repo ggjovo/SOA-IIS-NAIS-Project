@@ -1,0 +1,23 @@
+# Koristimo zvaničnu Go sliku kao osnovu
+FROM golang:latest
+
+# Postavljamo radni direktorijum unutar kontejnera
+WORKDIR /app
+
+# Kopiramo go.mod i go.sum fajlove
+COPY go.mod go.sum ./
+
+# Preuzimamo zavisnosti
+RUN go mod download
+
+# Kopiramo izvorni kod u kontejner
+COPY . .
+
+# Kompajliramo Go aplikaciju
+RUN go build -o /gateway
+
+# Otvaramo port na kojem će mikroservis slušati
+EXPOSE 8080
+
+# Pokrećemo mikroservis
+CMD [ "/gateway" ]

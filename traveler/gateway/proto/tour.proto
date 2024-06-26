@@ -1,0 +1,91 @@
+syntax = "proto3";
+
+package tour_service;
+option go_package = "tour_microservice/invoicer";
+
+import "google/api/annotations.proto";
+
+message Tour {
+    int32 id = 1;
+    string title = 2;
+    string description = 3;
+    int32 duration = 4;
+    double price = 5;
+    string difficulty = 6;
+    string status = 7;
+    repeated string tags = 8;
+    repeated string checkpoint_names = 9;
+    repeated double checkpoint_longitude = 10;
+    repeated double checkpoint_latitude = 11;
+    repeated int32 checkpoint_positions = 12;
+}
+
+message TourList {
+    repeated Tour tours = 1;
+}
+
+message AddCheckpointRequest {
+    int32 tour_id = 1;
+    string name = 2;
+    double latitude = 3;
+    double longitude = 4;
+    int32 position = 5;
+}
+
+message GetAllToursGuideRequest {
+}
+
+message CreateTourRequest {
+    string title = 1;
+    string description = 2;
+    int32 duration = 3;
+    double price = 4;
+    string difficulty = 5;
+    repeated string tags = 6;
+    string status = 7;
+}
+
+message GetAllToursTouristRequest {
+}
+
+message DeleteTourRequest {
+    int32 tour_id = 1;
+}
+
+service TourService {
+    rpc GetAllToursGuide (GetAllToursGuideRequest) returns (TourList) {
+        option (google.api.http) = {
+            get: "/tours/guide"
+        };
+    }
+    rpc CreateTour (CreateTourRequest) returns (Tour) {
+        option (google.api.http) = {
+            post: "/tour"
+            body: "*"
+        };
+    }
+    rpc AddCheckpoint (AddCheckpointRequest) returns (AddCheckpointResponse) {
+        option (google.api.http) = {
+            post: "/tour/checkpoint"
+            body: "*"
+        };
+    }
+    rpc GetAllToursTourist (GetAllToursTouristRequest) returns (TourList) {
+        option (google.api.http) = {
+            get: "/tours"
+        };
+    }
+    rpc DeleteTour (DeleteTourRequest) returns (DeleteTourResponse) {
+        option (google.api.http) = {
+            delete: "/tour/{tour_id}"
+        };
+    }
+}
+
+message AddCheckpointResponse {
+    string message = 1;
+}
+
+message DeleteTourResponse {
+    string message = 1;
+}

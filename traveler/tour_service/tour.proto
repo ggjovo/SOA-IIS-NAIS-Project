@@ -1,0 +1,70 @@
+syntax = "proto3";
+
+package tour_service;
+
+message Tour {
+    int32 id = 1;
+    string title = 2;
+    string description = 3;
+    int32 duration = 4;
+    double price = 5;
+    string difficulty = 6;
+    string status = 7;
+    repeated string tags = 8;
+    repeated string checkpoint_names = 9;
+    repeated double checkpoint_longitude = 10;
+    repeated double checkpoint_latitude = 11;
+    repeated int32 checkpoint_positions = 12;
+}
+
+message TourList {
+    repeated Tour tours = 1;
+}
+
+message AddCheckpointRequest {
+    string token = 1;
+    int32 tour_id = 2;
+    string name = 3;
+    double latitude = 4;
+    double longitude = 5;
+    int32 position = 6;
+}
+
+message GetAllToursGuideRequest {
+    string token = 1;
+}
+
+message CreateTourRequest {
+    string token = 1;
+    string title = 2;
+    string description = 3;
+    int32 duration = 4;
+    double price = 5;
+    string difficulty = 6;
+    repeated string tags = 7;
+    string status = 8;
+}
+
+message GetAllToursTouristRequest {
+    string token = 1;
+}
+
+message DeleteTourRequest {
+    int32 tour_id = 1;
+}
+
+service TourService {
+    rpc GetAllToursGuide (GetAllToursGuideRequest) returns (TourList);
+    rpc CreateTour (CreateTourRequest) returns (Tour);
+    rpc AddCheckpoint (AddCheckpointRequest) returns (AddCheckpointResponse);
+    rpc GetAllToursTourist (GetAllToursTouristRequest) returns (TourList);
+    rpc DeleteTour (DeleteTourRequest) returns (DeleteTourResponse);
+}
+
+message AddCheckpointResponse {
+    string message = 1;
+}
+
+message DeleteTourResponse {
+    string message = 1;
+}

@@ -1,0 +1,20 @@
+# Use Python 3.10.13 as base image
+FROM python:3.10.13
+
+# Set working directory
+WORKDIR /app
+
+# Copy requirements
+COPY requirements.txt .
+
+# Install requirements
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the rest of your application code
+COPY . .
+
+# Expose the ports your app runs on
+EXPOSE 8085
+
+# Command to run both the Flask and gRPC services
+CMD ["sh", "-c", "python main.py"]

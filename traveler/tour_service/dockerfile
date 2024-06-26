@@ -1,0 +1,19 @@
+# Use Python 3.10.13 as base image
+FROM python:3.10.13
+
+# Set working directory
+WORKDIR /app
+
+# Copy requirements
+COPY requirements.txt .
+
+# Install requirements
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+# Expose the port your app runs on
+EXPOSE 8084 50054
+
+# Command to run the Flask app
+CMD ["sh", "-c", "python main.py & python server.py"]

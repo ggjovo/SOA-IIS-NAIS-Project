@@ -1,0 +1,99 @@
+.blogs-title{
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.blogs-wrapper{
+    width: 85%;
+    height: 100%;
+    border: 1px solid black;
+    border-radius: 50px;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+    margin: 0 auto;
+}
+
+.blog-card{
+    width: 90%;
+    max-width: 1100px;
+    height: 75px;
+    border: 1px solid black;
+    border-radius: 50px;
+    margin: 0 auto;
+    padding: 10px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.sort-blogs-btn{
+    width: 160px;
+    height: 45px;
+    padding: 10px 10px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    border-radius: 30px;
+    border: 1px solid darkcyan;
+    background-color: rgb(163, 241, 241);
+    cursor: pointer;
+    transition: background-color ease 0.5s;
+    float: right;
+    margin-top: -55px;
+    margin-right: 140px;
+}
+
+.sort-blogs-btn:hover{
+    background-color:rgb(32, 223, 223)
+}
+
+.blogs-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+
+.blogs-info p {
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.blogs-info p span{
+    color: red;
+}
+
+.see-more-btn{
+    width: 90px;
+    height: 33px;
+    margin-top: 10px;
+    margin-left: 100px;
+    border-radius: 15px;
+    border: 1px solid rgb(131, 203, 23);
+    background-color: rgb(50, 213, 50);
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: background-color ease 0.5s;
+    cursor: pointer;
+    list-style: none;
+    text-decoration: none;
+    text-align: center;
+    padding-top: 2.3px;
+}
+
+.recommended-mark {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #28a745; /* Green background */
+    color: #fff; /* White text */
+    padding: 5px 10px; /* Padding */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 12px; /* Smaller font size */
+}
+
+.blog-card {
+    position: relative; /* Make the container relative */
+}
+
+.see-more-btn:hover{
+    background-color: rgb(7, 123, 7);
+}

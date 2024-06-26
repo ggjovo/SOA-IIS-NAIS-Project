@@ -1,0 +1,1121 @@
+{
+	"info": {
+		"_postman_id": "34d16b8c-ff46-4a7a-b324-1094a9542bb3",
+		"name": "Gateway Testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33770175",
+		"_collection_link": "https://speeding-zodiac-921307.postman.co/workspace/My-Workspace~5fd46221-1534-412e-8952-a33f56b1008e/collection/33770175-34d16b8c-ff46-4a7a-b324-1094a9542bb3?action=share&source=collection_link&creator=33770175"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\" : \"jovo\",\n    \"password\" : \"jovo\",\n    \"email\" : \"jovo@jovo.jovo\",\n    \"role\" : \"guide\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\" : \"admin\",\n    \"password\" : \"admin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all blogs (Blog Service)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/api/blog_service/blogs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"blog_service",
+						"blogs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get blog by id (Blog Service)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/api/blog_service/blog/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"blog_service",
+						"blog",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all posts (Blog Service)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/api/blog_service/posts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"blog_service",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get post by id (Blog Service)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/api/blog_service/post/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"blog_service",
+						"post",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get comments from post (Blog Service)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/api/blog_service/post/4/comments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"blog_service",
+						"post",
+						"4",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add comment to post (Blog Service)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"post_id\": 3, \n    \"comment_text\": \"Baš mi se dopada\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/api/blog_service/comment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"blog_service",
+						"comment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit comment (Blog Service)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"comment_text\": \"Izmenjen\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/api/blog_service/comment/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"blog_service",
+						"comment",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Follow user (Blog Service)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"following_id\" : 3\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/api/blog_service/follow",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"blog_service",
+						"follow"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Unfollow User (Blog Service)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"following_id\" : 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/api/blog_service/unfollow",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"blog_service",
+						"unfollow"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create personal blog (Blog Service)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Jovin blog\",\n    \"description\": \"Opis jovinog bloga.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/api/blog_service/blog",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"blog_service",
+						"blog"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add post to blog (Blog Service)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\" : \"Solarni čamac\",\n    \"description\" : \"Pišite iskustva sa ekološkim jedrenjacima.\",\n    \"images\" : [],\n    \"date\": \"2024-03-21\",\n    \"status\" : \"draft\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/api/blog_service/post/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"blog_service",
+						"post",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Rate Platform (Blog Service)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"rating\" : 1,\n    \"comment\" : \"I am not happy\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/api/blog_service/platform_review",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"blog_service",
+						"platform_review"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Like post (Blog Service)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/api/blog_service/like_post/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"blog_service",
+						"like_post",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Like Comment (Blog Service)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/api/blog_service/like_comment/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"blog_service",
+						"like_comment",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Rate Blog (Blog Service)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"rating\" : 4\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/api/blog_service/blog/1/rate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"blog_service",
+						"blog",
+						"1",
+						"rate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user blog (Blog Service)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/api/blog_service/get_user_blog",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"blog_service",
+						"get_user_blog"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin - all reviews (Blog Service)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/api/blog_service/admin/platform_reviews",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"blog_service",
+						"admin",
+						"platform_reviews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin - average rating per day (Blog Service)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/api/blog_service/admin/average_rating_by_day",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"blog_service",
+						"admin",
+						"average_rating_by_day"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin - block user (Blog Service)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/api/blog_service/admin/block_user/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"blog_service",
+						"admin",
+						"block_user",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Neo4j - Create Blog",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"New Blog Title\",\n    \"description\": \"This is a new blog post.\",\n    \"created_at\": \"2024-06-05T12:00:00\",\n    \"blog_id\": 2000\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/api/blog_recommender/blogs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"blog_recommender",
+						"blogs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Neo4j Get all blogs",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/api/blog_recommender/blogs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"blog_recommender",
+						"blogs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Neo4j Blog GET, PUT, DELETE",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\" : \"Novi Title\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/api/blog_recommender/blogs/206",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"blog_recommender",
+						"blogs",
+						"206"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Neo4j - Create Post",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"New Post Title\",\n    \"description\": \"This is the content of the new post.\",\n    \"author\": \"John Doe\",\n    \"created_at\": \"2024-06-09T12:00:00\",\n    \"images\": []\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/api/blog_recommender/posts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"blog_recommender",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Neo4j Get all posts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/api/blog_recommender/posts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"blog_recommender",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Neo4j Post PUT, DELETE",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"status\" : \"published\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/api/blog_recommender/posts/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"blog_recommender",
+						"posts",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Neo4j Get all posts for blog",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/api/blog_recommender/blogs/206/posts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"blog_recommender",
+						"blogs",
+						"206",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Neo4j POST comment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"parent_comment_id\": 20, //or \"post_id\" if comment is not reply\n  \"comment_id\": 2000,\n  \"comment_text\": \"This is a reply to the comment\",\n  \"created_at\": \"2024-06-18T13:00:00Z\",\n  \"last_edited_at\": \"2024-06-18T13:00:00Z\",\n  \"likes\": 0\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/api/blog_recommender/comments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"blog_recommender",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Neo4j GET all comments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/api/blog_recommender/comments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"blog_recommender",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Neo4j GET PUT DELETE Comment",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"comment_text\": \"New comment text at 40.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/api/blog_recommender/comments/2000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"blog_recommender",
+						"comments",
+						"2000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Neo4j GET all comments from post",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/api/blog_recommender/posts/3/comments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"blog_recommender",
+						"posts",
+						"3",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Neo4j Like comment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/api/blog_recommender/comments/20/like",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"blog_recommender",
+						"comments",
+						"20",
+						"like"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Neo4j POST GET users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 2000,\n    \"username\": \"johndoe\",\n    \"role\": \"admin\",\n    \"token\": \"your_auth_token\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/api/blog_recommender/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"blog_recommender",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Neo4j PUT DELETE GET User",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"perica\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/api/blog_recommender/users/2000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"blog_recommender",
+						"users",
+						"2000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Neo4j Rate blog",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"rating\" : 5\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/api/blog_recommender/blogs/2000/rate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"blog_recommender",
+						"blogs",
+						"2000",
+						"rate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Neo4j recommend",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/api/blog_recommender/recommend",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"blog_recommender",
+						"recommend"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,113 @@
+.post-title {
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.post-wrapper {
+    width: 85%;
+    height: 100%;
+    border: 1px solid black;
+    border-radius: 50px;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+    margin: 0 auto;
+}
+
+.post-container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.post-info-card{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.post-info-card p {
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.post-info-card p span{
+    color: red;
+}
+
+.comments-container{
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    border: 1px solid black;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+}
+
+.comments-container h3{
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.comment-card {
+    border: 1px solid #434343;
+    border-radius: 10px;
+    width: 800px;
+    padding: 30px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+
+.reply-card {
+    border: 1px solid #434343;
+    border-radius: 10px;
+    padding: 8px;
+    margin-top: 8px;
+}
+
+.like-post-btn{
+    float: right;
+    width: 130px;
+    height: 30px;
+    border-radius: 40px;
+    border: 1px solid red;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 1px;
+    background-color: rgb(247, 98, 98);
+    margin-top: -40px;
+    margin-right: 65px;
+    cursor: pointer;
+    transition: background-color ease 0.5s;
+}
+
+.like-post-btn:hover{
+    background-color: red;
+}
+
+.reply-btn{
+    float: right;
+    width: 130px;
+    height: 30px;
+    border-radius: 40px;
+    border: 1px solid rgb(101, 241, 143);
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 1px;
+    background-color: rgb(55, 232, 108);
+    margin-top: -40px;
+    cursor: pointer;
+    transition: background-color ease 0.5s;
+}
+
+.reply-btn:hover{
+    background-color: rgb(9, 198, 66);
+}
+
+.empty-comments{
+    text-align: center;
+    font-weight: bold;
+    font-size: 22px;
+    letter-spacing: 2px;
+}
